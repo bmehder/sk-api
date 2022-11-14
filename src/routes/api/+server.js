@@ -1,4 +1,4 @@
-import { error } from '@sveltejs/kit'
+import { error, json } from '@sveltejs/kit'
 
 /** @type {import('./$types').RequestHandler} */
 export function GET({ url }) {
@@ -13,5 +13,5 @@ export function GET({ url }) {
 
   const random = min + Math.random() * d
 
-  return new Response(String(random))
+  return json(random)
 }
